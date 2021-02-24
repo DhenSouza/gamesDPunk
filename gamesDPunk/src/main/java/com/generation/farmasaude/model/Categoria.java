@@ -27,7 +27,7 @@ public class Categoria {
 	private String descricao;
 
 	@Size(min = 5, max = 255)
-	private String tipo;
+	private String plataforma;
 
 	@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("categoria")
@@ -50,12 +50,12 @@ public class Categoria {
 		this.descricao = descricao;
 	}
 
-	public String getTipo() {
-		return tipo;
+	public String getplataforma() {
+		return plataforma;
 	}
 
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	public void setplataforma(String plataforma) {
+		this.plataforma = plataforma;
 	}
 
 }

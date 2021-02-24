@@ -35,6 +35,11 @@ public class CategoriaController {
 		return ResponseEntity.ok(categoriaRepository.findAllByDescricaoContainingIgnoreCase(descricao));
 	}
 	
+	@GetMapping("descricao/plataforma/{plataforma}")
+	public ResponseEntity<List<Categoria>> findByPlataforma (@PathVariable String plataforma){
+		return ResponseEntity.ok(categoriaRepository.findAllByPlataformaContainingIgnoreCase(plataforma));
+	}
+	
 	@PostMapping
 	public ResponseEntity<Categoria> postCategoria(@RequestBody Categoria categoria){
 		return ResponseEntity.status(HttpStatus.CREATED).body(categoriaRepository.save(categoria));
